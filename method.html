@@ -1,0 +1,155 @@
+<li class="item">
+            <h2 class="collapse">Use actionItemDisable method after initialization.</h2>
+            <ul class="collapse detail">
+                <li><em>Description:</em> You can disable or enable any action button after initialized tmGrid instance.</li>						
+                <li><em>Arguments:</em> item- while action item you want to disable.</li>
+                <li>
+                    <em>Code examples:</em><br /><br />	
+                    &nbsp;&nbsp;&nbsp;&nbsp;var item= $('#tmGrid').tmGrid('option', 'actionItems')[0].element;<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid('actionItemDisable', item);
+                </li>
+            </ul>
+            <div>
+                <label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;var actionIcons= [<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'name': 'Edit',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'clssName': 'button_edit',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'tmPopup': {<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'title': 'Edit Something Popup',<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'url': 'popup/popup_content.html',<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'buttons': [<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Save',<br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click: function(){<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do something...<br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Cancel',<br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;click: function(){<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var parentButton= $('#tmGrid_actionItem').tmGrid('option', 'actionItems');<br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var button= parentButton[0].element
+                                            $(button).tmPopup('close');<br/>		
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                                    }<br/>
+                                ]<br/>
+                            },<br/>
+                            'disabled': true<br/>
+                        },<br/>
+                        {<br/>
+                            'name': 'Delete',<br/>
+                            'clssName': 'button_remove',<br/>
+                            'click': function(){<br/>
+                                alert('delete');<br/>
+                            },<br/>
+                            'disabled': true<br/>
+                        }<br/><br/><br/>
+                    ];<br/>
+                    var tmGrid= $('#tmGrid_actionItemEnableDisable');<br/>
+                    tmGrid.tmGrid({<br/>
+                        dataProvider: data,<br/>
+                        columns: columns,<br/>
+                        actionItems: actionIcons,<br/>
+                        limit: 10,<br/>
+                        select: function(event, ui, data){<br/>
+                            var editItem= tmGrid.tmGrid('option', 'actionItems')[0].element;<br/>
+                            console.log(editItem);<br/>
+                            if(ui.length == 1){<br/>
+                                tmGrid.tmGrid('actionItemEnable', editItem);<br/>
+                            }else{<br/>
+                                tmGrid.tmGrid('actionItemDisable', editItem);<br/>
+                            }<br/>
+                        }<br/>
+                    });
+                </label>
+                <div class="content">
+                    <table id="tmGrid_actionItemEnableDisable"></table>
+                </div>
+                <script>
+                    var actionIcons2= [
+                        {
+                            'name': 'Edit',
+                            'clssName': 'button_edit',
+                            'tmPopup': {		
+                                'title': 'Edit Something Popup',
+                                'url': 'popup/popup_content.html',
+                                'buttons': [
+                                    {
+                                        name: 'Save',
+                                        click: function(){
+                                            
+                                        }
+                                    },
+                                    {
+                                        name: 'Cancel',
+                                        click: function(){
+                                            var parentButton= $('#tmGrid_actionItem').tmGrid('option', 'actionItems');
+                                            var button= parentButton[0].element
+                                            $(button).tmPopup('close');												
+                                        }
+                                    }
+                                ]
+                            },	
+                            'disabled': true
+                        },
+                        {
+                            'name': 'Delete',
+                            'clssName': 'button_remove',
+                            'click': function(){
+                                alert('delete');
+                            },
+                            'disabled': true
+                        }
+                    ];
+                    var tmGrid= $('#tmGrid_actionItemEnableDisable');
+                    /*tmGrid.tmGrid({		
+                        dataProvider: data,
+                        columns: columns,
+                        actionItems: actionIcons2,
+                        limit: 10,
+                        select: function(event, ui, data){	
+                            var editItem= tmGrid.tmGrid('option', 'actionItems')[0].element;
+                            console.log(editItem);
+                            if(ui.length == 1){
+                                tmGrid.tmGrid('actionItemEnable', editItem);
+                            }else{
+                                tmGrid.tmGrid('actionItemDisable', editItem);
+                            }
+                        }
+                    });
+                */</script>
+            </div>
+        </li>
+        <li class="item">
+            <h2 class="collapse">Use option(getter) method after initialization</h2>
+            <ul class="collapse detail">						
+                <li><em>Description:</em> Get any tmButton option.</li>					
+                <li>
+                    <em>Code examples:</em><br /><br />
+                    var value= $('#tmButton').tmButton('option', 'optionName');
+                </li>
+            </ul>
+            <label>
+                $('#tmButton_method_option_getter').tmButton({<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;name: "Org Name",<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;click: function(e){<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var name= $('#tmButton_method_option_getter').tmButton("option", "name");<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(name);<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                });
+            </label>
+            <div class="content">
+                <a id="tmButton_method_option_getter"></a>
+            </div>
+            <script>
+                /*$('#tmButton_method_option_getter').tmButton({
+                    name: "Org Name",
+                    click: function(e){
+                        var name= $('#tmButton_method_option_getter').tmButton("option", "name");
+                        alert(name);
+                    }
+                });
+            */</script>
+        </li>
+    

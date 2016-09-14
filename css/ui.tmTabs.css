@@ -1,0 +1,136 @@
+.tmTabs.ui-tabs{
+	border:none;
+	padding:0px;
+	background: none;
+}
+.tmTabs.ui-tabs  > .ui-widget-header {
+	backgrouxnd:#FFF;		
+	background: -webkit-gradient(linear, left top, left bottom, from(#FAFAFA), to(#E5E5E5));
+	background: -moz-linear-gradient(top,  #FAFAFA,  #E5E5E5);
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr="#FAFAFA", endColorStr="#E5E5E5", gradientType="0");
+	border:1px #b2b2b2 solid;
+    border-bottom:1px #999999 solid;
+	-moz-border-radius:0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;	
+}
+.tmTabs .ui-widget-content.ui-tabs-panel {
+	border:1px solid #b2b2b2;
+	border-top:none;
+	margin-top:0px;
+	overflow:hidden;
+	padding:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background: #F5F5F5;
+}
+.tmTabs .tmGrid{
+	background:#FFF;
+	border: none;
+	margin-top:-1px;
+	table-layout: fixed;
+	width:100%; 
+}
+.tmTabs.ui-tabs .ui-tabs-nav {
+	padding:0px 3px;
+	/*-ms-box-sizing: content-box;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;*/
+	height: 28px;
+}
+/*
+.mozilla .tmTabs.ui-tabs .ui-tabs-nav {
+	padding:0px 3px;
+	padding-bottom:0px;
+	-ms-box-sizing: content-box;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	height: 28px;
+}*/	
+.tmTabs.ui-tabs .ui-tabs-nav li {
+    margin: 0;
+	margin-right: 3px;
+	padding: 0px;
+    border: 1px #999999 solid !important;
+	position: relative;
+	top:3px;
+    height: 24px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F3F3F3), to(#E5E5E5));
+	background: -moz-linear-gradient(top,  #F3F3F3,  #E5E5E5);
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr="#F3F3F3", endColorStr="#E5E5E5", gradientType="0");
+}
+.tmTabs.ui-tabs .ui-tabs-nav li:hover {
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#e1e1e1));
+	background: -moz-linear-gradient(top,  #FFFFFF,  #e1e1e1);
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr="#FFFFFF", endColorStr="#e1e1e1", gradientType="0");
+	border-color:#777777;
+	cursor:pointer;
+}
+.tmTabs.ui-tabs .ui-tabs-nav li.ui-state-active {
+	border-bottom: 1px #FFFFFF solid !important;
+	font-weight:bold;
+	background:#FFF;
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#F5F5F5));
+	background: -moz-linear-gradient(top,  #FFFFFF,  #F5F5F5);*/
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr="#FFFFFF", endColorStr="#FFFFFF", gradientType="0");
+	overflow: hidden;
+	/*-ms-box-sizing: content-box;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;*/
+}
+/*
+.tmTabs.ui-tabs .ui-tabs-nav li.ui-state-active.behaviorTab {
+	background:#FFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#F5F5F5));
+	background: -moz-linear-gradient(top,  #FFFFFF,  #F5F5F5);*/
+	/*filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr="#FFFFFF", endColorStr="#FFFFFF", gradientType="0");	
+}
+*/
+.mozilla .tmTabs.ui-tabs .ui-tabs-nav li a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:center;	
+	paddinsg: 5px 12px 3px 12px;
+    padding: 5px 12px 0;
+	color:#555555;
+}
+.tmTabs.ui-tabs .ui-tabs-nav li a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:center;	
+	psadding: 5px 12px 4px 12px;
+	pasdding: 5px 12px 3px 12px \9;
+    padding: 5px 12px 0;
+	color:#555555;
+}
+.tmTabs.ui-tabs .ui-tabs-nav li a:hover{
+	color:#000;
+}
+.mozilla .tmTabs.ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
+.mozilla .tmTabs.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.mozilla .tmTabs.ui-tabs .ui-tabs-nav li.ui-state-processing a{
+	paddisng: 5px 12px 4px 12px;
+    padding: 5px 12px 0;
+	cursor:default;
+}
+.tmTabs.ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
+.tmTabs.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.tmTabs.ui-tabs .ui-tabs-nav li.ui-state-processing a{
+	pasdding: 5px 12px 5px 12px;
+	pasdding: 5px 12px 4px 12px \9;
+    padding: 5px 12px 0;
+	cursor:default;
+}
+.tmTabs.ui-tabs .ui-tabs-nav li.ui-state-active a{
+	color: #000;
+}
+.tmTabs .ui-tmGrid {
+    border: none;
+	margin-bottom: 0px;
+}
+.tmTabs .ui-tmGrid thead tr.behaviorArea,
+.tmTabs .ui-tmGrid thead tr.behaviorArea > th{
+	border-bottom: 1px solid #B2B2B2;
+	height: 5px;
+}

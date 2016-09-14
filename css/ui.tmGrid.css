@@ -1,0 +1,1171 @@
+@charset "utf-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+/* CSS Document */
+.ui-tmGrid{
+	background:#FFF;
+    border: none;    
+	margin: 0;
+	table-layout: fixed;
+	position: relative;
+    border-spacing:0;
+    width: 100%;
+}
+.mozilla .ui-tmGrid{
+    border-left: 1px #b2b2b2 solid !important;
+    border-right: 1px #b2b2b2 solid !important;
+}
+.ui-tmGrid.ui-state-disabled{
+    opacity: 1;
+	filter: alpha(opacity=100);	
+}
+.ui-tmGrid.aliasGrid{
+    top: -100000px;
+}
+.ui-tmGrid.aliasGrid thead tr.sizing_row th {
+    height: 0px;
+}
+.ui-tmGrid.aliasGrid th,
+.ui-tmGrid.aliasGrid td{
+    float: left !important;
+}
+/* Column Global */
+.ui-tmGrid thead > tr > th ,
+.ui-tmGrid tbody > tr > td,
+.ui-tmGrid tfoot > tr > td {
+	overflow: hidden;
+	white-space: nowrap;
+    border: 1px #b2b2b2 solid;
+    text-align:left;
+    font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+    color: #000;
+    vertical-align: middle;
+    padding: 0px;
+    margin: 0px;
+}
+/* Thead Area Th */
+.ui-tmGrid thead tr.sizing_row > th,
+.ui-tmGrid thead tr.behaviorArea > th,
+.ui-tmGrid thead tr.actionItemArea > th,
+.ui-tmGrid thead tr.header_title > th,
+.ui-tmGrid tfoot tr > td {
+	height: 0px;
+	line-height: 0px;	
+    border-top: 0;
+    border-bottom: 0;
+}
+.ui-tmGrid thead tr.header_title > th {
+	background:#FFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#e5f2ff));
+	background: -moz-linear-gradient(top,  #FFF,  #e5f2ff);
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr="#FFFFFF", endColorStr="#e5f2ff", gradientType="0");
+    height:24px;	
+    line-height: 24px;
+    border-bottom: 1px #b2b2b2 solid;
+    border-top: 1px #b2b2b2 solid;    
+}
+.mozilla.moz_15 .ui-tmGrid thead tr.header_title > th {
+    height:25px;
+    line-height: 25px;
+}
+.ui-tmGrid tfoot tr > td{
+    border-bottom: 1px #b2b2b2 solid;
+	background-color:#f5f5f5;
+	height:26px;
+	line-height:25px;
+	text-align:right;
+}
+.ui-tmGrid thead tr.behaviorArea.timeRangeBox > th,
+.ui-tmGrid thead tr.behaviorArea.searchBar > th,
+.ui-tmGrid thead tr.behaviorArea.filter > th,
+.ui-tmGrid thead tr.actionItemArea.actionItems > th {
+	background:#FFFFFF;
+	height: 28px;   
+	line-height: 28px;
+    border-top: 1px #b2b2b2 solid;
+    overflow: visible;
+}
+/* Sizing Area */
+.ui-tmGrid.onResize *{
+	cursor: col-resize;
+    -moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;	
+	-o-user-select: none;
+    user-select: none;
+}
+.ui-tmGrid thead tr.sizing_row th.sizeCheckBoxAll {
+	width:25px;
+}
+.ui-tmGrid thead tr.sizing_row th .tmmsgbox{
+	position: absolute;
+	left: 1px;
+	right: 1px;
+	margin: 0px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+	border-radius: 0px;
+	z-index: 1;
+}
+.webkit .ui-tmGrid thead tr.sizing_row th .tmmsgbox{
+    right: 0px;
+}
+/* Behavior Area Global */
+.tmTabs .ui-tmGrid thead tr.behaviorArea > th{
+	height: 5px;
+    overflow: visible;
+}
+.ui-tmGrid thead tr.behaviorArea th span.label {
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000;
+    height: 28px;
+    padding-left: 14px; 
+    margin-left: 0px;    
+    background: url("../images/tool_panel_div.png") no-repeat scroll 8px center;
+}
+.ui-tmGrid thead tr.behaviorArea th span.label.first {
+    background: none;
+    margin-left: 5px;
+    padding-left: 0;
+}
+/* Behavior Area - Time Range Box */
+.ui-tmGrid .timeRangeBox .timeRangeTitle {}
+.ui-tmGrid .timeRangeBox .timeRange{
+	position:relative;
+	float:left;
+	background:#FFFFFF;
+	border: 1px solid #B2B2B2;
+	height:20px;
+	line-height:20px;
+	min-width:120px;
+	margin-left:5px;
+	margin-top: 3px;
+	padding-right:5px;
+	*padding-right:3px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	z-index:2;
+}
+.ui-tmGrid .timeRangeBox .timeRange.disabled{
+	background-color: #F5F5F5;
+	border:1px #CCCCCC solid;
+	cursor: default;
+}
+.ui-tmGrid .timeRangeBox .timeRange span.timeRangeLabel{
+	display:block;
+	background:url(../images/ui.tmGrid_time_range_option_down_normal.png) no-repeat right center #FFFFFF;
+	text-align:left;
+	padding-left:5px;
+	height:20px;
+	line-height:20px;
+	min-width:115px;
+	cursor:pointer;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000;
+}
+.ui-tmGrid .timeRangeBox .timeRange.disabled span.timeRangeLabel{
+	background:url(../images/ui.tmGrid_time_range_option_down_disabled.png) no-repeat right center #F5F5F5;
+	color: #BBBBBB;
+	cursor: default;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList{
+	display:none;
+	background:#FFFFFF;
+	position:absolute;	
+	text-align:left;
+	border:1px #B2B2B2 solid;	
+    -moz-border-radius: 5px; 
+	-moz-border-radius-topleft: 0px; 
+	-moz-border-radius-topright: 0px; 
+    -webkit-border-radius: 5px;
+    -webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+    border-radius: 0px 0px 5px 5px; 
+	-moz-box-shadow:3px 3px 6px #474747;
+	-webkit-box-shadow:3px 3px 6px #474747;    
+    box-shadow:3px 3px 6px #474747;
+	left:-1px;
+	right:-1px;
+	top:20px;
+	font-weight: normal;
+	cursor:default;
+	z-index:3;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList.left.customized{
+	left: auto;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList ul.optionList{
+	height: auto !important;
+	padding: 0px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList.left ul.optionList{
+    float: right;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList ul.optionList > li{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding-left:5px;	
+	cursor:pointer;
+	color: #000;
+	margin-top: 0px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList.left ul.optionList > li{
+	padding-left: 20px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList ul.optionList > li:hover{	
+	background:#E5EFFA;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList ul.optionList > li.last{
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
+	-moz-border-radius-topleft: 0px; 
+	-moz-border-radius-topright: 0px; 
+    -webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+    border-radius: 0px 0px 4px 4px; 
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList ul.optionList > li.customized{
+	background-image:url(../images/time_range_customized_arrow.png);
+	background-repeat:no-repeat;
+	background-position:right 0px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList.left ul.optionList > li.customized{
+	background-position: left center;
+	background-image:url(../images/time_range_customized_arrow_left.gif);
+	background-repeat:no-repeat;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList ul.optionList > li.last.actived:hover{
+	-moz-border-radius: 0px; 
+	-webkit-border-radius: 0px;
+    border-radius: 0px; 
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea{
+	overflow:hidden;
+	position:absolute;
+	left:125px;	
+	width: 370px;
+	rigt:0px;
+	top:0px;
+	bottom:0px;
+	cursor:default;
+	display:none;
+	border-left:1px #cccccc solid;
+	background:#FFF;
+    -moz-border-radius: 0 0 5px 0;
+	-webkit-border-radius: 0 0 5px 0;
+	border-radius: 0 0 5px 0;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList.left div.datePickerArea{
+	border: none;
+	border-right:1px #cccccc solid;
+	right: 125px;
+	left: auto;
+	-moz-border-radius: 0 0 0 5px;
+	-webkit-border-radius: 0 0 0 5px;
+	border-radius: 0 0 0 5px;
+	width: 376px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .datePicker{
+	height:300px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .dateMsgBox{
+	margin: 0px;
+    -moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0px;
+	opacity:0.9;
+	filter: alpha(opacity=90);	
+	position: absolute;
+	z-index: 1;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .datePicker .dateTitle{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000;
+	padding-left: 7px;
+	*padding-left: 5px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .datePicker .dateTitle span{
+	font-weight:normal;
+	margin-left:5px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .datePicker ul{
+	width:370px;
+	padding: 0px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .datePicker ul li{
+	float:left;
+    width: 179px;
+	padding: 0 0 0 6px;
+	*padding: 0 0 0 5px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date{
+	height:205px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker{	
+	width:13em;
+	height: 270px;
+	font-size: 1.1em;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker .ui-datepicker-header{
+    padding: 2px 0;
+    position: relative;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker .ui-datepicker-title{
+    margin: 0 2.1em;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker select.ui-datepicker-month,
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker select.ui-datepicker-year{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+    width: 55px;
+    vertical-align: top;
+    margin-top: 2px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker select.ui-datepicker-year{
+	margin-left: 3px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker th{
+	padding: 0.2em 0.3em;
+	*padding: 0.2em 0.25em;
+    border: none;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker td {
+    border: none;
+    padding: 1px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker td span, .ui-datepicker td a{
+	padding:0 0.19em 0 0;
+	font-size: 0.86em;
+	line-height:1.86em;
+	-webkit-text-size-adjust:none;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker td a.ui-state-highlight{
+	border: 1px solid #333333;
+	background:#efefef;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea div.date .ui-datepicker td a.ui-state-active{
+	border: 1px solid #DC2900;
+    background:#FFFFFF;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .datePicker ul li input{
+
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea ul li .time{  
+	*display:inline-block;
+	border-top:1px #a9a9a9 solid;
+	margin-left: 4px;
+    margin-right: 4px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea ul li .time .timeLab{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	color:#000;
+    padding-left: 2px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea ul li .time .timeLab span{
+	font-weight:normal;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea ul li .time .timeUnit{
+	clear:both;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#000;
+    float: left;
+    line-height: 20px;
+    padding-left: 2px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .ui-slider-horizontal{
+	width: 110px;
+	height:3px;
+	float: right;
+	margin: 7px 3px 3px 3px;
+	top:0.1em;	
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .ui-slider .ui-slider-range{
+	height:3px;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .ui-slider .ui-slider-handle{
+	width: 8px;
+	height:15px;
+	top:-0.55em;	
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background:url(../images/slider_handler_nonfocus.png) no-repeat center center #FFF;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .ui-slider .ui-slider-handle.ui-state-active{
+	width: 8px;
+	height:15px;
+	top:-0.55em;	
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background:url(../images/slider_handler.png) no-repeat center center #FFF;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .okBtn,
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .cancelBtn{
+	float:right;
+	margin: 5px 10px 0 0;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.datePickerArea .cancelBtn{
+	margin: 5px 0 0 0;
+}
+.ui-tmGrid .timeRangeBox .timeRange div.setList.left div.datePickerArea .cancelBtn{
+	margin: 5px 6px 0 0;
+}
+.ui-tmGrid .timeRangeBox .TempTimeRange{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight: normal;
+	float: left;
+	color: #000;
+	margin-left: 8px;
+	line-height:28px;
+	height: 28px;
+}
+/* Behavior Area - Search Box */
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .searchBox{
+	border: 1px solid #B2B2B2;
+    border-right: none;
+	float: left;
+	font-family: Arial;
+	font-size: 12px;
+	color: #999999;	
+	height: 16px;
+    line-height: 16px;
+    line-height: 15px \9;
+    margin: 4px 0 4px 5px;
+	padding: 1px 2px;
+    border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 3px 0 0 3px;
+	cursor: text;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis; 
+    -icab-text-overflow: ellipsis;
+    -khtml-text-overflow: ellipsis; 
+    -moz-text-overflow: ellipsis; 
+    -webkit-text-overflow: ellipsis;
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .searchBox.disabled{
+    background: #EBEBEB;
+    border-color: #777777;	
+	color: #777777;
+	cursor: default;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .searchBox.focus{
+    color: #000;
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .searchBox.searched {    
+    color: #000;
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .actionBtn {
+    background:url(../images/icon_search.png) no-repeat left 1px #FFFFFF;
+    width: 17px;
+    height: 16px;    
+    border: 1px solid #B2B2B2;
+    border-left: none;
+	float: left;
+    margin: 4px 0;
+    padding: 1px 0;
+    border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-webkit-border-radius: 0 3px 3px 0;
+    cursor: text;
+} 
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .actionBtn.disabled {
+    background:url(../images/icon_search.png) no-repeat left 1px #EAEAEA;
+    border-color: #777777;	
+    cursor: default;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .actionBtn.readyToSearch{
+    background:url(../images/icon_search.png) no-repeat left -31px #FFFFFF;
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .actionBtn.readyToSearch:hover{
+    background:url(../images/icon_search.png) no-repeat left -15px #FFFFFF;
+    cursor: pointer;
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .actionBtn.readyToSearch.disabled{
+    background:url(../images/icon_search.png) no-repeat left -31px #EAEAEA;
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .actionBtn.searched {
+    background:url(../images/icon_close.png) no-repeat left -31px #FFFFFF;
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .actionBtn.searched:hover{
+    background:url(../images/icon_close.png) no-repeat left -15px #FFFFFF !important;
+    cursor: pointer;
+}
+.ui-tmGrid thead tr.behaviorArea.searchBar .search_box .actionBtn.searched.disabled {
+    background: url(../images/icon_close.png) no-repeat left -31px #EAEAEA !important;
+    cursor: default;
+}
+/* Behavior Area - Filter */
+.ui-tmGrid thead tr.behaviorArea.filter > th select.filter{
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+	margin-top: 4px;
+    margin-left: 5px;
+    height: 20px;
+	color: #000;
+	float: left;
+}
+.ui-tmGrid thead tr.behaviorArea.filter > th select.filter.disabled{
+	color: #BBBBBB;	
+	background-color: #F5F5F5;
+	border: 1px solid #CCCCCC;
+}
+/* Action Items Area Global */
+.ui-tmGrid thead tr.actionItemArea.actionItems > th {
+	background:#f5f5f5;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup {	
+	height: 28px;
+    float: left;	
+	padding: 0;
+}
+.mozilla .ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup {	
+	height: 27px;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup > li{
+	height: 28px;
+	margin-top: 0px;
+}
+.mozilla .ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup  > li{
+	height: 27px;
+	margin-top: 0px;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup > li > span{
+	height: 22px;
+	line-height: 22px;
+}
+.mozilla .ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup > li > span{
+	height: 21px;
+	line-height: 21px;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup > li span.listContainer{
+	background-position: 3px center;
+	border: 1px solid #F5F5F5;
+	color: #000000;
+	cursor: pointer;
+	display: block;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight: normal;	
+	padding: 2px 5px;
+	padding-bottom: 0px;
+	padding-left: 25px;
+	padding-top: 0px;
+	margin-top: 2px;	
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;	
+	-o-user-select: none;
+    user-select: none;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup > li span.listContainer.hover  {
+	border: 1px solid #999999;	
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup > li.buttonDisabled{
+	cursor: default;
+	filter: alpha(opacity=40);
+	opacity: 0.4;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup > li.buttonDisabled span.listContainer:hover{
+	border:1px solid #F5F5F5;  
+	cursor: default;    
+}.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup li {
+	background: url("../images/tool_panel_div.png") no-repeat scroll right center transparent;
+	float: left;
+	margin-left: 4px;
+	padding-right: 7px;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems > th ul.actionGroup li:last-child {
+	background: none;
+}
+/* Action Items Area - Button ICON IMAGES */
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_new{
+	background:url(../images/table_w_tabs_new_icon.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_duplicate{
+	background:url(../images/icon_duplicate.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_edit{
+	background:url(../images/icon_edit.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_export{
+	background:url(../images/icon_export.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_import{
+	background:url(../images/icon_import.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_deploy{
+	background:url(../images/table_w_tabs_deploy_icon.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_view_management{
+	background:url(../images/table_w_tabs_view_management_icon.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_global_overwrite{
+	background:url(../images/table_w_tabs_global_overwrite_icon.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_refresh{
+	background:url(../images/table_w_tabs_refresh_icon.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_add{
+	background:url(../images/icon_add.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_search{
+	background:url(../images/table_w_tabs_view_management_icon.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_configure {
+	background:url(../images/icon_configure.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_remove{
+	background:url(../images/icon_delete.gif) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_group{
+	background:url(../images/icon_group.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_ungroup{
+	background:url(../images/icon_ungroup.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_attachedalert{
+	background:url(../images/icon_attachedalert.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_sendreport{
+	background:url(../images/icon_sendreport.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_active{
+	background:url(../images/icon_activate.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_inactive{
+	background:url(../images/icon_inactivate.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_view_detail{
+	background:url(../images/icon_viewdetails.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_forward{
+	background:url(../images/icon_forward.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_mark_resolved{
+	background:url(../images/icon_mark_resolved.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_open_workbench{
+	background:url(../images/icon_openworkbench.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_generate_report{
+	background:url(../images/icon_generate_report.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_schedule_report{
+	background:url(../images/icon_schedule.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_unlock{
+	background:url(../images/icon_unlock.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_lock{
+	background:url(../images/icon_lock.png) no-repeat;
+}
+.ui-tmGrid thead tr.actionItemArea.actionItems ul.actionGroup .button_update{
+    background: url(../images/icon_update_server.png) no-repeat; 
+}
+/* Column Title */
+.ui-tmGrid thead tr.header_title th {
+    cursor: default;
+}
+.ui-tmGrid thead tr.header_title th.left {
+    text-align: left;
+}
+.ui-tmGrid thead tr.header_title th.center {
+    text-align: center;
+}
+.ui-tmGrid thead tr.header_title th.right {
+    text-align: right;
+}
+.ui-tmGrid thead tr.header_title th.checkBoxAll{
+	padding:0px;
+	text-align:center;
+    line-height: 24px;
+}
+.ui-tmGrid thead tr.header_title th.checkBoxAll input.check_all_checkbox{
+	vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+.ie7 .ui-tmGrid thead tr.header_title th.checkBoxAll input.check_all_checkbox,
+.ie8 .ui-tmGrid thead tr.header_title th.checkBoxAll input.check_all_checkbox{
+    margin-bottom: 2px;
+}
+.ui-tmGrid thead tr.header_title th > div {
+	padding:0 5px;
+}
+.ui-tmGrid thead tr.header_title th .column_title {
+    line-height: 24px;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis; 
+    -icab-text-overflow: ellipsis;
+    -khtml-text-overflow: ellipsis; 
+    -moz-text-overflow: ellipsis; 
+    -webkit-text-overflow: ellipsis;
+}
+/* Column Title - Sort*/
+.ui-tmGrid thead tr.header_title th.sortable{
+	cursor: pointer;
+}
+.ui-tmGrid thead tr.header_title th.sortable .column_title{
+	background-repeat: no-repeat;
+	padding-right: 18px;	
+}
+.ui-tmGrid thead tr.header_title th.sortable:hover .column_title{
+	text-decoration: underline;
+	color: #0066cc;
+}
+.ui-tmGrid thead tr.header_title th.sortable.onSort .column_title {
+	background-image:url(../images/icon_column_sort.png);
+	min-width: 25px;
+}
+.ui-tmGrid thead tr.header_title th.sortable.onSort.sort_asc .column_title{
+	background-position: right -12px;	
+}
+.ui-tmGrid thead tr.header_title th.sortable.onSort.sort_desc .column_title{
+	background-position: right 3px;
+}
+.ui-tmGrid thead tr.header_title th.unSortable{
+	cursor: default !important;	
+}
+.ui-tmGrid thead tr.header_title th.unSortable .column_title,
+.ui-tmGrid thead tr.header_title th.unSortable .column_title:hover{
+	opacity:0.35 !important;
+	filter: alpha(opacity=35) !important;
+	text-decoration: none !important;
+	color: #000 !important;
+}
+/* Column Title - Resize*/
+.ui-tmGrid thead tr.header_title th.readyResize:hover .column_title{
+	text-decoration: none;
+	color: #000000;
+}
+.ui-tmGrid thead tr.header_title th .resizeHandler {
+    padding: 0;
+    position: relative;	
+    width: 5px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    height: 23px;
+	height: 24px \9;
+	float: right;
+    cursor: col-resize;
+	margin: -23px -3px 0 0;
+	margin: -24px -3px 0 0 \9;
+    padding: 0;
+	background:#000;
+}
+.ui-tmGrid.disabled thead tr.header_title th .resizeHandler {
+    cursor: default;
+}
+.ui-tmGrid thead tr.header_title th.last .resizeHandler {
+	cursor: auto;
+}
+.ui-tmGrid thead tr.header_title th .resizeBaseLine {
+    width: 1px;
+    padding: 0;
+	position: absolute;
+	z-index: 2;
+    background: #000;
+    margin-left: -1px;
+}
+.ui-tmGrid thead tr.header_title th .resizeHelper {	
+	width: 5px;
+	padding: 0;
+	position: absolute;
+	cursor: col-resize;
+	z-index: 2;
+}
+.ui-tmGrid thead tr.header_title th .resizeHelper span {
+    background:#B2B2B2;
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    width: 1px;
+}
+.ui-tmGrid.onResize thead tr.header_title th .resizeHelper span {
+    background: #000000;
+}
+/* Column Title Drag */
+.ui-tmGrid.onDrag *{
+    cursor: move;    
+}
+.ui-tmGrid thead tr.header_title th.draggable {
+    -ms-user-select: none;
+    -moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;	
+	-o-user-select: none;
+    user-select: none;
+}
+.ui-tmGrid thead tr.sizing_row th .dragArea {
+    height: 26px;
+    line-height: 26px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+    visibility: hidden;
+}
+.ui-tmGrid.onDrag thead tr.sizing_row th .dragArea {
+    visibility: visible;
+}
+.ui-tmGrid thead tr.sizing_row th .dragArea .dragAreaContainer {    
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#e5f2ff));
+	background: -moz-linear-gradient(top,  #FFF,  #e5f2ff);
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr="#FFFFFF", endColorStr="#e5f2ff", gradientType="0");
+    height: 24px;
+    line-height: 24px;
+    border: 1px #B2B2B2 solid;
+    border-left: none;
+    border-right: none;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper {
+    border:1px #B2B2B2 solid;
+    line-height: 24px;
+    height: 24px;
+    position: absolute;
+    margin-left: -1px;
+    padding: 0;
+    overflow: hidden;
+    z-index: 4;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper.left {
+    text-align: left;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper.center {
+    text-align: center;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper.right {
+    text-align: right;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper.dragged {
+    background: -webkit-gradient(linear, left top, left bottom, from(#bcd7f1), to(#92bae1)) !important;    
+	background: -moz-linear-gradient(top,  #bcd7f1,  #92bae1)!important;
+    background: -o-linear-gradient(top,  #bcd7f1,  #92bae1)!important;
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#BAbcd7f1", endColorStr="#BA92bae1", gradientType="0") !important;
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BAbcd7f1, endColorstr=#BA92bae1);
+    opacity: 0.8;
+    border:1px #000 solid;
+    z-index: 5;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper .column_title {
+    padding: 0 5px;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper.sortable .column_title {
+    padding-right: 18px;
+    color: #000;
+    text-decoration: none;    
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper.sortable.onSort .column_title {
+    background-repeat: no-repeat;
+    background-image: url("../images/icon_column_sort.png");
+    min-width: 25px;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper.sortable.onSort.sort_asc .column_title {
+    background-position: right -12px !important;
+}
+.ui-tmGrid thead tr.sizing_row th .dragHelper.sortable.onSort.sort_desc .column_title {
+    background-position: right 3px !important;
+}
+.ui-tmGrid.onDrag tbody.row_container > tr{
+	background:#FFFFFF !important;
+}
+.ui-tmGrid.onDrag tbody.row_container > tr > td{
+    color: #999 !important;
+}
+/* Standard data rows */
+.ui-tmGrid tbody.row_container > tr > td {
+	border: 1px solid #dcdcdc;	
+	height:24px;
+	line-height:24px;
+	padding:0px 5px 0px 5px;
+	vertical-align:middle;	
+    white-space: nowrap;	
+	overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -icab-text-overflow: ellipsis;
+    -khtml-text-overflow: ellipsis; 
+    -moz-text-overflow: ellipsis; 
+    -webkit-text-overflow: ellipsis;    
+}
+.ui-tmGrid tbody.row_container > tr > td.left {
+    text-align: left;
+}
+.ui-tmGrid tbody.row_container > tr > td.center {
+    text-align: center;
+}
+.ui-tmGrid tbody.row_container > tr > td.right {
+    text-align: right;
+}
+.ui-tmGrid tbody.row_container > tr.first > td {
+    border-top: 1px #b2b2b2 solid;
+}
+.ui-tmGrid tbody.row_container > tr.last > td {
+    border-bottom: 1px #b2b2b2 solid;
+}
+.ui-tmGrid tbody.row_container > tr > td.lastRowCols {
+    border-bottom: 1px solid #B2B2B2;
+}
+.ui-tmGrid tbody.row_container > tr > td:first-child {
+    border-left: 1px #b2b2b2 solid;
+}
+.ui-tmGrid tbody.row_container > tr > td.last {
+    border-right: 1px #b2b2b2 solid;
+}
+.ui-tmGrid tbody.row_container > tr > td:first-child.checkBoxAll{
+	padding:0px;
+	text-align:center;
+}
+.ui-tmGrid tbody.row_container > tr.tmAlignTop > td {
+	vertical-align: top;
+}
+.ui-tmGrid tbody.row_container > tr.tmAlignMiddle > td {
+	vertical-align: middle;
+}
+.ui-tmGrid tbody.row_container  > tr.tmAlignBottom > td {
+	vertical-align: bottom;
+}
+.ui-tmGrid tbody.row_container > tr > td.tmAlignTop {
+	vertical-align: top;
+}
+.ui-tmGrid tbody.row_container > tr > td.tmAlignLeft{
+	text-align: left;
+}
+.ui-tmGrid tbody.row_container > tr > td:first-child > input.cbx  {
+	vertical-align:middle;
+    margin: 0;
+    margin-top: -2px \9;
+}
+.ui-tmGrid tbody.row_container > tr > td  img{
+	vertical-align: middle;
+}
+.ui-tmGrid tbody.row_container > tr > td > ul.sub_items {
+	margin: 0 -5px;	
+}
+.ui-tmGrid tbody.row_container > tr > td > ul.sub_items > li {
+	border-top:1px solid #e7e7e7;	
+	padding:0px 5px;
+}
+.ui-tmGrid tbody.row_container > tr  > td .sub_item  > a {
+	color:#0066CC;
+}
+.ui-tmGrid tbody.row_container > tr  > td a {
+    color: #0066CC;
+    text-decoration: none;
+}
+.ui-tmGrid tbody.row_container > tr  > td a:hover {
+    color: #FF0000;
+    text-decoration: underline;
+}
+/* Selected/hover row */
+.ui-tmGrid tbody.row_container > tr.hover,
+.ui-tmGrid tbody.row_container > tr:hover{
+	background:#e5effa;
+}
+.ui-tmGrid tbody.row_container > tr.hover.disabled {
+    background:#ffffff;
+}
+.ui-tmGrid tbody.row_container.selectabled > tr{
+	cursor: pointer;
+}
+.ui-tmGrid tbody.row_container.selectabled > tr.disabled{
+    cursor: default;
+}
+.ui-tmGrid tbody.row_container > tr.empty{
+	cursor: default !important;
+	background:#FFFFFF;
+}
+.ui-tmGrid tbody.row_container > tr.empty:hover{
+	background:#FFFFFF;	
+}
+.ui-tmGrid tbody.row_container > tr.noData > td{
+	height:28px;
+	line-height:28px;
+}
+.ui-tmGrid tbody.row_container > tr.checked:hover,
+.ui-tmGrid tbody.row_container > tr.checked.hover {
+	background-color:#e5effa;
+}
+.ui-tmGrid tbody.row_container > tr.checked {
+	background-color:#d7ebff;
+}
+.ui-tmGrid tbody.row_container > tr.checked.hover.disabled {
+	background-color:#d7ebff;
+}
+.ui-tmGrid.onResize tbody.row_container > tr{
+	background:#FFFFFF !important;    
+}
+.ui-tmGrid.onResize tbody.row_container > tr > td{
+    color: #999 !important;
+}
+/* Footer row */
+.ui-tmGrid th.ckb_cm{
+	padding-top:3px;
+	text-align:center;
+	width:20px;
+}
+.ui-tmGrid td.ckb_cm{
+	padding:0px;
+	padding-top:3px;
+	text-align:center;
+	width:20px;
+}
+/* Footer message for empty table */
+.ui-tmGrid .emptyTableMessage {
+	float: left;	
+	font: 12px Arial;
+	margin: 10px 30px;
+}
+.ui-tmGrid .emptyTableMessage .emptyTableLink {
+	color: #0066cc;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.ui-tmGrid .emptyTableMessage .emptyTableLink:hover {
+	color: #ff0000;
+}
+.ui-tmGrid .emptyTableMessage .emptyTableMessageText {
+	white-space: normal;
+}
+/* Pagination */
+.ui-tmGrid tfoot td .pagination{
+	float:right;
+	height:26px;	
+	margin:0px;
+	padding-right:10px;
+	vertical-align:middle;
+}
+.ui-tmGrid .pagination li{	
+	float:left;		
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:normal;
+	height:26px;
+	margin-left:2px;
+	line-height:26px;	
+}
+.mozilla .ui-tmGrid .pagination .pageInput, .mozilla .ui-tmGrid .pagination  .per_page{
+	line-height:25px;    
+}
+.ui-tmGrid .pagination .pageInput, .ui-tmGrid .pagination  .per_page{
+	line-height:24px;    
+}
+.ui-tmGrid .pagination .btn{
+	background:url(../images/pagination_btn.gif) no-repeat center;
+	cursor:pointer;
+	height:17px;
+	margin-top:4px;	
+	width:17px;
+}
+.ui-tmGrid .pagination .records{	
+	background: url("../images/tool_panel_div.png") no-repeat right center;
+	padding-right:10px;
+}
+.ui-tmGrid .pagination .btn_first{
+	background-position:0px -204px;
+}
+.ui-tmGrid .pagination .btn.btn_first_hover{
+	background-position:0px -221px;
+}
+.ui-tmGrid .pagination .btn_first.disabled{
+	background-position:0px -255px;
+	cursor: default;
+}
+.ui-tmGrid .pagination .btn.btn_prev{
+	background-position:0px -68px;
+}
+.ui-tmGrid .pagination .btn.btn_prev.disabled{
+	background-position:0px -119px;
+	cursor: default;
+}
+.ui-tmGrid .pagination .btn.btn_prev_hover{
+	background-position:0px -85px;
+}
+.ui-tmGrid .pagination .btn_next{	
+	background-position:0px 0px;
+}
+.ui-tmGrid .pagination .btn_next.disabled{	
+	background-position:0px -51px;
+	cursor: default;
+}
+.ui-tmGrid .pagination .btn_next_hover{	
+	background-position:0px -17px;
+}
+.ui-tmGrid .pagination .btn_last{
+	background-position:0px -136px;
+}	
+.ui-tmGrid .pagination .btn_last.disabled{
+	background-position:0px -187px;
+	cursor: default;
+}
+.ui-tmGrid .pagination .btn_last_hover{
+	background-position:0px -153px;
+}
+.ui-tmGrid .pagination .pager_current_page{	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:normal;
+	height:12px;
+	vertical-align:middle;
+	width:25px;
+    line-height: 13px;
+}
+.ui-tmGrid .pagination .per_page{    
+	background: url("../images/tool_panel_div.png") no-repeat left center;
+	padding-left: 5px;
+}
+.ui-tmGrid .pagination .per_page select{	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:normal;
+	vertical-align:middle;
+    height: 20px;
+	width:50px;
+}
+/* message and progress */
+.ui-tmGrid tbody.row_container tr.emptyContainer td{
+	padding: 0px;
+	cursor: default;
+}
+.ui-tmGrid tbody.row_container tr.emptyContainer:hover{
+	background: none;
+}
+.ui-tmGrid .sizing_row th div.progressLayer{
+	background: #FFF;
+	position: absolute;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	z-index: 2;
+	padding: 0px;	
+	cursor: default;	
+}
+.ui-tmGrid .sizing_row th div.progress{
+	background: url(../images/loading_small2.gif) no-repeat center;
+	position: absolute;
+	padding: 0px;
+	z-index: 3;	
+	cursor: default;
+}

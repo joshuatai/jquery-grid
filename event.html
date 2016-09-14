@@ -1,0 +1,292 @@
+<li class="item">
+            <h2 class="collapse">Initial with pageChange event.</h2>
+            <ul class="collapse detail">
+                <li><em>Type:</em> Function</li>
+                <li><em>Default:</em> null</li>
+                <li><em>Description:</em> You can assign an event handler with page changing behavior of this tmGrid instance.</li>						
+                <li>
+                    <em>Code examples:</em><br /><br />
+                    Initialize a tmGrid with the pageChange option specified.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />								
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pageChange: function(event, self){<br />			
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Page change event has been triggered!");<br />									
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                    Get or set the pageChange option, after init.<br />
+                    //getter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;var pageChange= $('#tmGrid').tmGrid('option', 'pageChange');<br />
+                    //setter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid('option', 'pageChange', function(event, self){ do the other thing…. });<br />
+                </li>
+            </ul>
+            <label>
+                &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />								
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'pageChange': function(event, self){<br />			
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Page change event has been triggered!");<br />									
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+            </label>
+            <div class="content">
+                <table id="tmGrid_pageChange"></table>		
+            </div>				
+            <script>
+                /*$('#tmGrid_pageChange').tmGrid({
+                    dataProvider: 'handler/handler.php',
+                    columns: columns2,
+                    limit: 10,
+                    pageChange: function(e, self){								
+                        alert("Page change event has been triggered!");
+                    }
+                });
+            */</script>					
+        </li>
+        <li class="item">
+            <h2 class="collapse">Initial with rowSelect event.</h2>
+            <ul class="collapse detail">
+                <li><em>Type:</em> Function</li>
+                <li><em>Default:</em> null</li>
+                <li><em>Description:</em> You can assign an event handler for row selection of this tmGrid instance.</li>
+                <li><em>Dependency:</em> Option selectable must to be true.</li>
+                <li><em>Arguments:</em> event- rowSelect event object, ui- current selected row, data- the row data of the current selected row.</li>
+                <li>
+                    <em>Code examples:</em><br /><br />
+                    Initialize a tmGrid with the rowSelect option specified.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rowSelect': function(event, ui, data){<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do something...<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                    Get or set the rowSelect option, after init.<br />
+                    //getter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;var rowSelect= $('#tmGrid').tmGrid('option', 'rowSelect');<br />
+                    //setter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid('option', 'rowSelect', function(event, ui, data){ do something…. });<br />
+                </li>
+            </ul>
+            <div>
+                <label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />								
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rowSelect': function(event, ui, data){<br />			
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(event);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(ui);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                </label>
+                <div class="content">
+                    <table id="tmGrid_rowSelect"></table>
+                </div>
+                <script>
+                   /* $('#tmGrid_rowSelect').tmGrid({		
+                        dataProvider: data,
+                        columns: columns,
+                        limit: 10,
+                        rowSelect: function(event, ui, data){
+                            console.log(event);
+                            console.log(ui);
+                            console.log(data);
+                        }
+                    });
+                */</script>
+            </div>
+        </li>
+        <li class="item">
+            <h2 class="collapse">Initial with rowUnselect event.</h2>
+            <ul class="collapse detail">
+                <li><em>Type:</em> Function</li>
+                <li><em>Default:</em> null</li>
+                <li><em>Description:</em> You can assign an event handler for row unselection of this tmGrid instance.</li>
+                <li><em>Dependency:</em> Option selectable must to be true.</li>
+                <li><em>Arguments:</em> event- rowUnselect event object, ui- current unselected row, data- the row data of the current unselected row.</li>
+                <li>
+                    <em>Code examples:</em><br /><br />
+                    Initialize a tmGrid with the rowUnselect option specified.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rowUnselect': function(event, ui, data){<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do something...<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                    Get or set the rowUnselect option, after init.<br />
+                    //getter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;var rowUnselect= $('#tmGrid').tmGrid('option', 'rowUnselect');<br />
+                    //setter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid('option', 'rowUnselect', function(event, ui, data){ do something…. });<br />
+                </li>
+            </ul>
+            <div>
+                <label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />								
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rowUnselect': function(event, ui, data){<br />			
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(event);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(ui);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                </label>
+                <div class="content">
+                    <table id="tmGrid_rowUnselect"></table>
+                </div>
+                <script>
+                    /*$('#tmGrid_rowUnselect').tmGrid({		
+                        dataProvider: data,
+                        columns: columns,
+                        limit: 10,
+                        rowUnselect: function(event, ui, data){
+                            console.log(event);
+                            console.log(ui);
+                            console.log(data);
+                        }
+                    });
+                */</script>
+            </div>
+        </li>
+        <li class="item">
+            <h2 class="collapse">Initial with select event.</h2>
+            <ul class="collapse detail">
+                <li><em>Type:</em> Function</li>
+                <li><em>Default:</em> null</li>
+                <li><em>Description:</em> You can assign an event handler for row select/unselect of this tmGrid instance.</li>
+                <li><em>Dependency:</em> Option selectable must to be true.</li>
+                <li><em>Arguments:</em> event- select event object, ui- whole selected rows, data- the row data of the current unselected row.</li>
+                <li>
+                    <em>Code examples:</em><br /><br />
+                    Initialize a tmGrid with the select option specified.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'select': function(event, ui, data){<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do something...<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                    Get or set the select option, after init.<br />
+                    //getter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;var select= $('#tmGrid').tmGrid('option', 'select');<br />
+                    //setter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid('option', 'select', function(event, ui, data){ do something…. });<br />
+                </li>
+            </ul>
+            <div>
+                <label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />								
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'select': function(event, ui, data){<br />			
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(event);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(ui);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                </label>
+                <div class="content">
+                    <table id="tmGrid_select"></table>
+                </div>
+                <script>
+                    /*$('#tmGrid_select').tmGrid({		
+                        dataProvider: data,
+                        columns: columns,								
+                        limit: 10,
+                        select: function(event, ui, data){
+                            console.log(event);
+                            console.log(ui);
+                            console.log(data);
+                        }
+                    });
+                */</script>
+            </div>
+        </li>
+        <li class="item">
+            <h2 class="collapse">Initial with rowEnter event.</h2>
+            <ul class="collapse detail">
+                <li><em>Type:</em> Function</li>
+                <li><em>Default:</em> null</li>
+                <li><em>Description:</em> You can assign an event handler for row hover(enter) of this tmGrid instance.</li>
+                
+                <li><em>Arguments:</em> event- rowEnter event object, ui- current entered row, data- the row data of the current entered row.</li>
+                <li>
+                    <em>Code examples:</em><br /><br />
+                    Initialize a tmGrid with the rowEnter option specified.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rowEnter': function(event, ui, data){<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do something...<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                    Get or set the rowEnter option, after init.<br />
+                    //getter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;var rowEnter= $('#tmGrid').tmGrid('option', 'rowEnter');<br />
+                    //setter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid('option', 'rowEnter', function(event, ui, data){ do something…. });<br />
+                </li>
+            </ul>
+            <div>
+                <label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />								
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rowEnter': function(event, ui, data){<br />			
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(event);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(ui);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                </label>
+                <div class="content">
+                    <table id="tmGrid_rowEnter"></table>
+                </div>
+                <script>
+                    /*$('#tmGrid_rowEnter').tmGrid({		
+                        dataProvider: data,
+                        columns: columns,								
+                        limit: 10,
+                        rowEnter: function(event, ui, data){
+                            console.log(event);
+                            console.log(ui);
+                            console.log(data);
+                        }
+                    });
+                */</script>
+            </div>
+        </li>
+        <li class="item">
+            <h2 class="collapse">Initial with rowLeave event.</h2>
+            <ul class="collapse detail">
+                <li><em>Type:</em> Function</li>
+                <li><em>Default:</em> null</li>
+                <li><em>Description:</em> You can assign an event handler for row out(leave) of this tmGrid instance.</li>						
+                <li><em>Arguments:</em> event- rowLeave event object, ui- current left row, data- the row data of the current left row.</li>
+                <li>
+                    <em>Code examples:</em><br /><br />
+                    Initialize a tmGrid with the rowLeave option specified.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rowLeave': function(event, ui, data){<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do something...<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                    Get or set the rowLeave option, after init.<br />
+                    //getter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;var rowLeave= $('#tmGrid').tmGrid('option', 'rowLeave');<br />
+                    //setter<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid('option', 'rowLeave', function(event, ui, data){ do something…. });<br />
+                </li>
+            </ul>
+            <div>
+                <label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$('#tmGrid').tmGrid({<br />								
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rowLeave': function(event, ui, data){<br />			
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(event);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(ui);<br />	
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(data);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br />
+                </label>
+                <div class="content">
+                    <table id="tmGrid_rowLeave"></table>
+                </div>
+                <script>
+                    /*$('#tmGrid_rowLeave').tmGrid({		
+                        dataProvider: data,
+                        columns: columns,								
+                        limit: 10,
+                        rowLeave: function(event, ui, data){
+                            console.log(event);
+                            console.log(ui);
+                            console.log(data);
+                        }
+                    });
+                */</script>
+            </div>
+        </li>
+    

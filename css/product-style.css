@@ -1,0 +1,80 @@
+/**
+ * Product Style Sheet
+ * This CSS file requires "trend-style.css" as base style.
+ **/
+
+ul.column {
+    float:left;
+}
+ul.top {
+    width:100%;
+}
+ul.left {
+    width:30%;
+}
+ul.middle {
+    width:39.9%;
+}
+ul.right {
+    width:30%;
+}
+.widget {
+    border:1px solid #a8a8a8;
+    margin:0 0 10px 10px;
+    background:url(../images/title_bg.gif) repeat-x left top;
+    border-radius           : 4px; /*Standard*/
+    -moz-border-radius      : 4px; /*Firefox */
+    -webkit-border-radius   : 4px; /*Webkit  */
+    box-shadow: 0px 1px 2px #ccc;
+    -moz-box-shadow: 0px 1px 2px #ccc;
+}
+.left .widget {
+    margin-left:0px;
+}
+.right .widget {
+    margin-right:0px;
+}
+.widget h3 {
+    line-height:30px;
+    height:30px;
+    font-weight:bold;
+    padding:0 10px;
+}
+.widget_content {
+    padding: 10px;
+}
+.widget_content:after {
+    content:".";
+    height:0;
+    display:block;
+    visibility:hidden;
+    clear:both;
+}
+.bullet {
+    word-wrap:break-word;
+}
+.bullet li{
+    padding-left:10px;
+    background:url(../images/bullet_blue.gif) no-repeat left 9px;
+    line-height:2em;
+}
+.bullet li:after {
+    content:".";
+    height:0;
+    display:block;
+    visibility:hidden;
+    clear:both;
+}
+.bullet li b {
+    float:left;
+    width:11em;
+    width:44%;
+    clear:left;
+    font-weight:normal;
+}
+.bullet li i {
+    float:left;
+    width:50%;
+    padding-left:5%;
+    font-style:normal;
+}

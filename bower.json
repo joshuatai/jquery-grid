@@ -1,0 +1,38 @@
+{
+  "name": "tm-grid",
+  "version": "1.0.0",
+  "description": "tmGrid is a client-side data grid control based on jQuery module. It supports basic grid operations like searching, filtering, deleting, paging, sorting and so on.",
+  "main": "index.html",
+  "theme": null,
+  "author": ["Joshua <joshua_tai@trend.com.tw>"],  
+  "stakeholder": [
+    "visual-designer": "Lesley <lesley_chien@trend.com.tw>"
+  ],
+  "snapshots": [
+    "./snapshots/simple.png",    
+    "./snapshots/search_pagination.png",
+    "./snapshots/sorting.png", 
+    "./snapshots/column_resize.png", 
+    "./snapshots/drag_column.png",
+    "./snapshots/column_tooltip.png",
+    "./snapshots/filter.png",
+    "./snapshots/date_time_picker.png",
+    "./snapshots/actions.png"
+  ],
+  "keywords": [
+    "table",
+    "grid",
+    "jquery",
+    "ui",
+    "plugin"
+  ],  
+  "license": "MIT",
+  "homepage": "http://commercial-ui.tw.trendnet.org/gitlab-pages/int/jquery-tm-grid/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
