@@ -26,7 +26,7 @@
     "plugin"
   ],  
   "license": "MIT",
-  "homepage": "http://commercial-ui.tw.trendnet.org/gitlab-pages/int/jquery-tm-grid/index.html",
+  "homepage": "/",
   "ignore": [
     "**/.*",
     "node_modules",
