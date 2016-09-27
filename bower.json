@@ -4,7 +4,7 @@
   "description": "tmGrid is a client-side data grid control based on jQuery module. It supports basic grid operations like searching, filtering, deleting, paging, sorting and so on.",
   "main": "index.html",
   "theme": null,
-  "author": ["Joshua <joshua_tai@trend.com.tw>"],  
+  "authors": ["Joshua <joshua_tai@trend.com.tw>"],  
   "visual-designer": "Lesley <lesley_chien@trend.com.tw>",
   "ui-designer": "Mear Kuo (HIE-TW-ENT) <mear_kuo@trend.com.tw>",
   "snapshots": [
