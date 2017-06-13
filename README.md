@@ -3,7 +3,7 @@
 
 The tmGrid is a client-side data grid control based on jQuery module. It supports basic grid operations like searching, filtering, deleting, paging, sorting and so on..
 
-#### Requirement
+#### Requirements
 1. Apache + PHP 5.0 or above
 
 #### Usage
